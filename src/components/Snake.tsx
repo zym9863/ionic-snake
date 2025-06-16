@@ -286,25 +286,33 @@ const Snake: React.FC = () => {
         <IonCardContent>
           <div className="game-info">
             <div className="score-display">
-              <IonText color="primary">
-                <h2>分数: {gameState.score}</h2>
-              </IonText>
-              <IonText color="secondary">
-                <h3>最高分: {highScore}</h3>
-              </IonText>
+              <div className="score-item">
+                <h2>{gameState.score}</h2>
+                <h3>当前分数</h3>
+              </div>
+              <div className="score-item">
+                <h2>{highScore}</h2>
+                <h3>最高分数</h3>
+              </div>
             </div>
+            
             {gameState.gameOver && (
-              <IonText color="danger">
-                <h3>游戏结束!</h3>
-                {gameState.score === highScore && gameState.score > 0 && (
-                  <p>🎉 新纪录！</p>
-                )}
-              </IonText>
+              <div className="game-status game-over">
+                <IonText color="danger">
+                  <h3>🎮 游戏结束!</h3>
+                  {gameState.score === highScore && gameState.score > 0 && (
+                    <p className="record-celebration">🎉 恭喜！创造新纪录！</p>
+                  )}
+                </IonText>
+              </div>
             )}
+            
             {gameState.isPaused && gameState.gameStarted && !gameState.gameOver && (
-              <IonText color="warning">
-                <h3>游戏暂停</h3>
-              </IonText>
+              <div className="game-status paused">
+                <IonText color="warning">
+                  <h3>⏸️ 游戏暂停</h3>
+                </IonText>
+              </div>
             )}
           </div>
 

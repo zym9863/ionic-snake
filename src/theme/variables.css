@@ -1,2 +1,151 @@
-/* For information on how to create your own theme, please see:
+/* Ionic Variables and Theming. For more info, please see:
 http://ionicframework.com/docs/theming/ */
+
+/** Ionic CSS Variables **/
+:root {
+  /** primary **/
+  --ion-color-primary: #4c6ef5;
+  --ion-color-primary-rgb: 76, 110, 245;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #435dd7;
+  --ion-color-primary-tint: #5e7bf6;
+
+  /** secondary **/
+  --ion-color-secondary: #9c88ff;
+  --ion-color-secondary-rgb: 156, 136, 255;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+  --ion-color-secondary-shade: #8977e0;
+  --ion-color-secondary-tint: #a694ff;
+
+  /** tertiary **/
+  --ion-color-tertiary: #ff6b9d;
+  --ion-color-tertiary-rgb: 255, 107, 157;
+  --ion-color-tertiary-contrast: #ffffff;
+  --ion-color-tertiary-contrast-rgb: 255, 255, 255;
+  --ion-color-tertiary-shade: #e05e8a;
+  --ion-color-tertiary-tint: #ff7aa7;
+
+  /** success **/
+  --ion-color-success: #10dc60;
+  --ion-color-success-rgb: 16, 220, 96;
+  --ion-color-success-contrast: #ffffff;
+  --ion-color-success-contrast-rgb: 255, 255, 255;
+  --ion-color-success-shade: #0ec254;
+  --ion-color-success-tint: #28e070;
+
+  /** warning **/
+  --ion-color-warning: #ffb347;
+  --ion-color-warning-rgb: 255, 179, 71;
+  --ion-color-warning-contrast: #000000;
+  --ion-color-warning-contrast-rgb: 0, 0, 0;
+  --ion-color-warning-shade: #e09e3e;
+  --ion-color-warning-tint: #ffbb59;
+
+  /** danger **/
+  --ion-color-danger: #ff4757;
+  --ion-color-danger-rgb: 255, 71, 87;
+  --ion-color-danger-contrast: #ffffff;
+  --ion-color-danger-contrast-rgb: 255, 255, 255;
+  --ion-color-danger-shade: #e03e4d;
+  --ion-color-danger-tint: #ff5965;
+
+  /** light **/
+  --ion-color-light: #f8f9fa;
+  --ion-color-light-rgb: 248, 249, 250;
+  --ion-color-light-contrast: #000000;
+  --ion-color-light-contrast-rgb: 0, 0, 0;
+  --ion-color-light-shade: #dadbe0;
+  --ion-color-light-tint: #f9fafb;
+
+  /** medium **/
+  --ion-color-medium: #92949c;
+  --ion-color-medium-rgb: 146, 148, 156;
+  --ion-color-medium-contrast: #ffffff;
+  --ion-color-medium-contrast-rgb: 255, 255, 255;
+  --ion-color-medium-shade: #808289;
+  --ion-color-medium-tint: #9d9fa6;
+
+  /** dark **/
+  --ion-color-dark: #2d3748;
+  --ion-color-dark-rgb: 45, 55, 72;
+  --ion-color-dark-contrast: #ffffff;
+  --ion-color-dark-contrast-rgb: 255, 255, 255;
+  --ion-color-dark-shade: #283040;
+  --ion-color-dark-tint: #42505a;
+
+  /* Custom Game Colors */
+  --snake-body-color: #48bb78;
+  --snake-head-color: #38a169;
+  --snake-shadow: rgba(72, 187, 120, 0.4);
+  --food-color: #ed8936;
+  --food-shadow: rgba(237, 137, 54, 0.6);
+  --game-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --board-bg: rgba(255, 255, 255, 0.95);
+  --glass-effect: rgba(255, 255, 255, 0.1);
+  --text-shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Dark mode customizations */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ion-color-primary: #6366f1;
+    --ion-color-primary-shade: #5856eb;
+    --ion-color-primary-tint: #7377f2;
+
+    --ion-color-light: #1a202c;
+    --ion-color-light-rgb: 26, 32, 44;
+    --ion-color-light-shade: #171923;
+    --ion-color-light-tint: #2d3748;
+
+    --ion-color-dark: #f7fafc;
+    --ion-color-dark-rgb: 247, 250, 252;
+    --ion-color-dark-shade: #d9dee3;
+    --ion-color-dark-tint: #f8fbfc;
+
+    /* Dark mode game colors */
+    --snake-body-color: #68d391;
+    --snake-head-color: #48bb78;
+    --snake-shadow: rgba(104, 211, 145, 0.4);
+    --food-color: #f6ad55;
+    --food-shadow: rgba(246, 173, 85, 0.6);
+    --game-bg: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+    --board-bg: rgba(26, 32, 44, 0.95);
+    --glass-effect: rgba(255, 255, 255, 0.05);
+  }
+}
+
+/* Global styles */
+body {
+  font-family: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Custom backdrop filters for modern glass effect */
+.glass-morphism {
+  background: var(--glass-effect);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Enhanced button styles */
+ion-button {
+  --border-radius: 12px;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0.5px;
+}
+
+/* Enhanced card styles */
+ion-card {
+  --border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Smooth animations for all elements */
+* {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}

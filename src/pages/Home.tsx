@@ -4,16 +4,25 @@ import './Home.css';
 
 const Home: React.FC = () => {
   return (
-    <IonPage>
-      <IonHeader>
+    <IonPage className="home-page">
+      <div className="floating-particles">
+        <div className="particle"></div>
+        <div className="particle"></div>
+        <div className="particle"></div>
+        <div className="particle"></div>
+        <div className="particle"></div>
+      </div>
+      
+      <IonHeader className="home-header">
         <IonToolbar>
-          <IonTitle>贪吃蛇游戏</IonTitle>
+          <IonTitle>🐍 贪吃蛇游戏</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent fullscreen>
-        <IonHeader collapse="condense">
+      
+      <IonContent fullscreen className="home-content">
+        <IonHeader collapse="condense" className="home-header">
           <IonToolbar>
-            <IonTitle size="large">贪吃蛇游戏</IonTitle>
+            <IonTitle size="large">🐍 贪吃蛇游戏</IonTitle>
           </IonToolbar>
         </IonHeader>
         <Snake />
