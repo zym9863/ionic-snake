@@ -1,4 +1,4 @@
-package io.ionic.starter;
+package io.ionic.snake;
 
 import com.getcapacitor.BridgeActivity;
 
